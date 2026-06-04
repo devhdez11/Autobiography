@@ -1,0 +1,863 @@
+/* ══════════════════════════════════════════════════════════════════
+   DEVANY RENATTA — AUTOBIOGRAPHY STYLESHEET  v4
+   ──────────────────────────────────────────────────────────────────
+
+   GLOBAL CSS CUSTOM PROPERTIES
+   Edit the variables below to retheme the entire site at once.
+
+   ── COLOR PALETTE ──────────────────────────────────────────────
+   --color-wine    #58111A    Deep Wine / Guinda
+   --color-pink    #FADADD    Soft Pink
+   --color-cream   #FDF6EC    Soft Warm Cream
+   --color-white   #FFFFFF    Pure White
+   --color-text    #2A2A2A    Near-black body copy
+   --color-muted   #7A6262    Muted warm gray for tags/labels
+
+   ── TYPOGRAPHY ─────────────────────────────────────────────────
+   --font-serif    'Playfair Display'  → h1 h2 h3 h4, quotes
+   --font-sans     'Montserrat'        → body, nav, labels
+
+   ── SHADOW SYSTEM (flat 2D editorial depth, zero blur) ─────────
+   --shadow-on-light   4px 4px 0px #58111A   (use on pink/cream/white)
+   --shadow-on-dark    4px 4px 0px rgba(0,0,0,0.35)  (use on wine bg)
+
+   ── BORDER RADIUS ──────────────────────────────────────────────
+   --radius          2%   applied universally to all boxes/cards/photos
+
+   ── SPACING ────────────────────────────────────────────────────
+   --page-px         64px   horizontal outer padding
+   --page-py         96px   vertical section padding
+   --gap             20px   default grid / flex gap
+   --max-w           1200px
+
+══════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* Colors */
+  --color-wine:         #58111A;
+  --color-pink:         #FADADD;
+  --color-cream:        #FDF6EC;
+  --color-white:        #FFFFFF;
+  --color-text:         #2A2A2A;
+  --color-muted:        #7A6262;
+
+  /* Fonts */
+  --font-serif:         'Playfair Display', Georgia, serif;
+  --font-sans:          'Montserrat', Helvetica, Arial, sans-serif;
+
+  /* Shadows */
+  --shadow-on-light:    4px 4px 0px var(--color-wine);
+  --shadow-on-dark:     4px 4px 0px rgba(0, 0, 0, 0.35);
+
+  /* Shape */
+  --radius:             2%;
+
+  /* Spacing */
+  --page-px:            64px;
+  --page-py:            96px;
+  --gap:                20px;
+  --max-w:              1200px;
+}
+
+/* ── RESET ─────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background: var(--color-white);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Real <img> tags fill their container and crop cleanly */
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+/* ── SHARED SECTION BASE ────────────────────────────────────── */
+.section { width: 100%; }
+
+/* ── SHARED TYPOGRAPHY ──────────────────────────────────────── */
+.section-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(1.9rem, 3.2vw, 2.9rem);
+  font-weight: 700;
+  line-height: 1.18;
+  margin-bottom: 36px;
+}
+.section-heading--wine  { color: var(--color-wine); }
+.section-heading--light { color: var(--color-white); }
+
+.sub-heading {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-wine);
+  margin: 36px 0 14px;
+}
+
+.body-text {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.9;
+  color: var(--color-text);
+  margin-bottom: 20px;
+}
+
+.chapter-tag {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin-bottom: 12px;
+}
+.chapter-tag--light { color: rgba(253, 246, 236, 0.45); }
+
+.section-rule {
+  border: none;
+  border-top: 1px solid rgba(88, 17, 26, 0.15);
+  margin: 40px 0;
+}
+
+/* ── PHOTO BOXES (Placeholders) ─────────────────────────────── */
+/*
+   When replacing a placeholder with a real image in VS Code:
+   1. Delete the entire <div class="photo-box ..."> block.
+   2. Paste your <img> tag in its place.
+   The CSS will handle sizing via the parent element's dimensions.
+*/
+.photo-box {
+  background-color: rgba(88, 17, 26, 0.07);
+  border: 2px solid rgba(88, 17, 26, 0.22);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.photo-box__label {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--color-wine);
+  opacity: 0.55;
+  padding: 10px;
+  line-height: 1.5;
+}
+
+.photo-box__label--light {
+  color: rgba(253, 246, 236, 0.55);
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   NAVBAR  ·  Flexbox  ·  Wine background
+══════════════════════════════════════════════════════════════ */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 500;
+  background: var(--color-wine);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 18px var(--page-px);
+  border-bottom: 2px solid rgba(250, 218, 221, 0.14);
+}
+
+.navbar__brand {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-pink);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
+}
+.navbar__brand:hover { color: var(--color-white); }
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px 28px;
+  list-style: none;
+}
+
+.navbar__links a {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: rgba(253, 246, 236, 0.75);
+}
+.navbar__links a:hover { color: var(--color-pink); }
+
+.navbar__toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-pink);
+  font-size: 1.4rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px;
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   SECTION 1 — HOME  ·  Pink #FADADD  ·  Asymmetric CSS Grid
+══════════════════════════════════════════════════════════════ */
+.home-section {
+  background: var(--color-pink);
+  padding: var(--page-py) var(--page-px);
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+}
+
+.home-section__grid {
+  width: 100%;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* Profile photo */
+.photo-box--profile {
+  width: 100%;
+  max-width: 460px;
+  aspect-ratio: 3 / 4;
+  border-color: var(--color-wine);
+  box-shadow: var(--shadow-on-light);
+  object-fit: cover;
+  display: block;
+}
+
+/* Text column uses Flexbox for vertical stacking */
+.home-section__text-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.home-section__role {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--color-wine);
+  opacity: 0.7;
+  margin-bottom: 18px;
+}
+
+.home-section__name {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 4.5vw, 4.2rem);
+  font-weight: 800;
+  color: var(--color-wine);
+  line-height: 1.08;
+  margin-bottom: 28px;
+}
+
+.home-section__quote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.08rem;
+  line-height: 1.75;
+  color: var(--color-wine);
+  border-left: 3px solid var(--color-wine);
+  padding-left: 22px;
+  margin-bottom: 28px;
+  opacity: 0.87;
+  border-radius: 0;
+}
+
+.home-section__intro {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.9;
+  color: rgba(42, 42, 42, 0.82);
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   SECTION 2 — EARLY LIFE  ·  Cream #FDF6EC
+   Flexbox for text flow, CSS Grid for photo rows
+══════════════════════════════════════════════════════════════ */
+.early-life-section {
+  background: var(--color-cream);
+  padding: var(--page-py) var(--page-px);
+}
+
+/* Centered editorial column — Flexbox column */
+.early-life-section__inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 4-photo horizontal grid — CSS Grid */
+.photo-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin: 24px 0 8px;
+  
+}
+
+.photo-box--grid4 {
+  aspect-ratio: 3 / 4;
+  width: 100%;
+  box-shadow: var(--shadow-on-light);
+  border-color: rgba(88, 17, 26, 0.2);
+  object-fit: cover;
+  display: block;
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   SECTION 3 — CHALLENGES  ·  Wine #58111A
+   CSS Grid: boxes left | sticky photo right
+══════════════════════════════════════════════════════════════ */
+.challenges-section {
+  background: var(--color-wine);
+  padding: var(--page-py) var(--page-px);
+}
+
+.challenges-section__inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+/* CSS Grid: challenge boxes take up most of the space, photo aside the rest */
+.challenges-section__layout {
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 48px;
+  align-items: start;
+  margin-top: 8px;
+}
+
+/* Flexbox column for the three staggered challenge cards */
+.challenges-section__boxes {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.challenge-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius);
+  padding: 32px 36px;
+  box-shadow: var(--shadow-on-dark);
+}
+
+.challenge-card__number {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: rgba(250, 218, 221, 0.14);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.challenge-card__title {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-pink);
+  margin-bottom: 14px;
+}
+
+.challenge-card__text {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.88;
+  color: rgba(253, 246, 236, 0.88);
+}
+
+/* Sticky B&W photo column */
+.challenges-section__photo-aside {
+  position: sticky;
+  top: 100px;
+}
+
+.photo-box--bw {
+  width: 100%;
+  aspect-ratio: 3 / 5;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  box-shadow: var(--shadow-on-dark);
+  object-fit: cover;
+  display: block;
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   SECTION 4 — ACHIEVEMENTS  ·  Pink #FADADD
+   CSS Grid 2×2 — photo ON TOP of each card
+══════════════════════════════════════════════════════════════ */
+.achievements-section {
+  background: var(--color-pink);
+  padding: var(--page-py) var(--page-px);
+}
+
+.achievements-section__inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+.achievements-section__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap);
+}
+
+/* Each card: Flexbox column so photo always sits above the text body */
+.achievement-card {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  border: 2px solid var(--color-wine);
+  box-shadow: var(--shadow-on-light);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Photo sits at the very top of every card */
+.achievement-card__photo {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 0;
+  border: none;
+  border-bottom: 2px solid rgba(88, 17, 26, 0.15);
+  flex-shrink: 0;
+  object-fit: cover;
+  display: block;
+}
+
+.achievement-card__body {
+  padding: 28px 30px 36px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.achievement-card__marker {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--color-wine);
+  opacity: 0.4;
+  margin-bottom: 12px;
+}
+
+.achievement-card__title {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-wine);
+  margin-bottom: 12px;
+}
+
+.achievement-card__text {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--color-text);
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   SECTION 5 — WHO I AM TODAY  ·  Pink #FADADD
+   CSS Grid asymmetric mosaic; Flexbox inside each box
+══════════════════════════════════════════════════════════════ */
+.who-i-am-section {
+  background: var(--color-pink);
+  padding: var(--page-py) var(--page-px);
+}
+
+.who-i-am-section__inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+.who-i-am-section__intro {
+  max-width: 780px;
+  margin-bottom: 48px;
+}
+
+/* 2-column grid: A and B side by side, C spanning full width */
+.who-i-am-section__mosaic {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap);
+  margin-bottom: 40px;
+}
+
+.who-box {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  border: 2px solid var(--color-wine);
+  box-shadow: var(--shadow-on-light);
+  padding: 36px;
+}
+
+/* Strengths box spans both columns */
+.who-box--strengths {
+  grid-column: 1 / -1;
+  background: var(--color-wine);
+  border-color: var(--color-wine);
+}
+.who-box--strengths .who-box__title { color: var(--color-pink); }
+.who-box--strengths .who-box__text  { color: rgba(253, 246, 236, 0.88); }
+.who-box--strengths strong          { color: var(--color-pink); }
+
+/* Strength items displayed in a 3-column sub-grid */
+.who-box__strengths-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.who-box__title {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-wine);
+  margin-bottom: 18px;
+}
+
+.who-box__text {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--color-text);
+  margin-bottom: 12px;
+}
+.who-box__text:last-child { margin-bottom: 0; }
+
+/* Full-width lifestyle photo — closes the section */
+
+.who-i-am-section__lifestyle-photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: rgba(255, 255, 255, 0.05);
+  border-top: 2px solid rgba(88, 17, 26, 0.1);
+  box-shadow: var(--shadow-on-light);
+  object-fit: cover;
+  display: block;
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   SECTION 6 — FUTURE VISION  ·  Pink #FADADD
+   CSS Grid two-column split; right side = 2×2 Grid
+══════════════════════════════════════════════════════════════ */
+.future-section {
+  background: var(--color-pink);
+  padding: var(--page-py) var(--page-px);
+  border-top: 2px solid rgba(88, 17, 26, 0.1);
+}
+
+.future-section__inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+/* Two-column layout */
+.future-section__columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.future-section__photo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto; 
+    gap: 12px;
+    width: 100%;
+}
+
+/* Esto controla el cuadro para que se estire de forma real */
+.future-section__photo-item {
+    width: 100%;
+    min-height: 350px;       /* ◄ ESTA LÍNEA obliga al cuadro a ser alto y largo */
+    box-shadow: var(--shadow-on-light);
+    border-color: var(--color-wine);
+    overflow: hidden;        /* Evita que la foto se desborde */
+    border-radius: 8px;      /* Combina con el diseño de tus otras tarjetas */
+}
+
+/* Esto obliga a la foto de adentro a rellenar el nuevo espacio largo */
+.future-section__photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;       /* Centra la imagen y la adapta perfectamente */
+    display: block;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   SECTION 7 — REFLECTION  ·  Wine #58111A
+   Flexbox centered column typography layout
+══════════════════════════════════════════════════════════════ */
+.reflection-section {
+  background: var(--color-wine);
+  padding: 120px var(--page-px);
+}
+
+.reflection-section__inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.reflection-section__heading {
+  font-family: var(--font-serif);
+  font-size: clamp(2.6rem, 5.5vw, 4.8rem);
+  font-weight: 800;
+  color: var(--color-white);
+  line-height: 1.1;
+  margin-bottom: 30px;
+}
+
+.reflection-section__rule {
+  width: 64px;
+  height: 3px;
+  background: var(--color-pink);
+  border-radius: 2px;
+  margin-bottom: 40px;
+  flex-shrink: 0;
+}
+
+.reflection-section__body {
+  font-family: var(--font-serif);
+  font-size: 1.12rem;
+  line-height: 1.95;
+  color: rgba(253, 246, 236, 0.9);
+  max-width: 760px;
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   SECTION 8 — GALLERY  ·  Cream #FDF6EC
+   Symmetric 3×3 CSS Grid — exactly 9 identical cells
+══════════════════════════════════════════════════════════════ */
+.gallery-section {
+  background: var(--color-cream);
+  padding: var(--page-py) var(--page-px);
+}
+
+.gallery-section__inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+/* 3 columns × 3 rows = 9 identical cells */
+.gallery-section__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 260px;
+  gap: 12px;
+}
+
+.gallery-section__item {
+  width: 100%;
+  height: 100%;
+  box-shadow: 3px 3px 0px rgba(88, 17, 26, 0.3);
+  border-color: rgba(88, 17, 26, 0.2);
+  display: block;
+  object-fit: cover;
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   FOOTER  ·  Wine #58111A  ·  Flexbox centered
+══════════════════════════════════════════════════════════════ */
+.site-footer {
+  background: var(--color-wine);
+  padding: 56px var(--page-px);
+  border-top: 2px solid rgba(250, 218, 221, 0.1);
+}
+
+/* Flexbox: favicon left, text center, mirror spacer right */
+.site-footer__inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+/* Favicon / small icon placeholder */
+.site-footer__favicon-placeholder {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px dashed rgba(250, 218, 221, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: transparent;  /* ◄ Cambiamos a transparente */
+  border: none; 
+}
+
+/* When replacing with real img:
+   <img src="images/favicon.png" alt="Site icon" class="site-footer__favicon">
+   Add to CSS: .site-footer__favicon { width:48px; height:48px; border-radius:50%; object-fit:cover; } */
+
+.site-footer__text {
+  text-align: center;
+}
+
+.site-footer__name {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: var(--color-pink);
+  letter-spacing: 0.03em;
+  margin-bottom: 10px;
+}
+
+.site-footer__copy {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 300;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(253, 246, 236, 0.32);
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   RESPONSIVE — TABLET  (≤ 1024px)
+══════════════════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  :root {
+    --page-px: 40px;
+    --page-py: 72px;
+  }
+
+  /* Home: stack to single column */
+  .home-section__grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .photo-box--profile {
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  /* Challenges: stack boxes then photo */
+  .challenges-section__layout {
+    grid-template-columns: 1fr;
+  }
+  .challenges-section__photo-aside {
+    position: static;
+    max-width: 320px;
+  }
+
+  /* Strengths 3-col → 1-col */
+  .who-box__strengths-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Future: stack */
+  .future-section__columns {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  /* Gallery: keep 3-col but shorter rows */
+  .gallery-section__grid {
+    grid-auto-rows: 200px;
+  }
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   RESPONSIVE — MOBILE  (≤ 680px)
+══════════════════════════════════════════════════════════════ */
+@media (max-width: 680px) {
+  :root {
+    --page-px: 20px;
+    --page-py: 56px;
+  }
+
+  /* ─ Navbar: collapse links into hamburger ─ */
+  .navbar { padding: 16px 20px; }
+  .navbar__toggle { display: block; }
+  .navbar__links {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 14px;
+    padding: 16px 0 4px;
+  }
+  .navbar__links--open { display: flex; }
+
+  .home-section__name { font-size: 2.2rem; }
+
+  /* 4-photo grids → 2×2 */
+  .photo-grid-4 { grid-template-columns: 1fr 1fr; }
+
+  /* Achievement cards → single column */
+  .achievements-section__grid { grid-template-columns: 1fr; }
+
+  /* Who I Am boxes → single column */
+  .who-i-am-section__mosaic { grid-template-columns: 1fr; }
+  .who-box--strengths { grid-column: 1; }
+
+  /* Gallery → 2 columns */
+  .gallery-section__grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 140px;
+  }
+
+  .reflection-section__heading { font-size: 2.2rem; }
+
+  /* Footer stack vertically on very small screens */
+  .site-footer__inner { flex-direction: column; }
+}

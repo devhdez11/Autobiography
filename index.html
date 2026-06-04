@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Devany Renatta — Personal Autobiography</title>
+
+  <!-- ═══ GOOGLE FONTS — Playfair Display (headings) + Montserrat (body) ═══ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/x-icon" herf="./favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="./imagenes/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════════════════════════
+       NAVBAR  ·  Wine #58111A  ·  Flexbox
+  ══════════════════════════════════════════════════════════════════ -->
+  <nav class="navbar">
+    <a class="navbar__brand" href="#home">Devany Hernández</a>
+
+    <!-- Mobile hamburger — toggled via JS at bottom of file -->
+    <button class="navbar__toggle" aria-label="Toggle navigation">&#9776;</button>
+
+    <ul class="navbar__links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#early-life">Early Life</a></li>
+      <li><a href="#challenges">Challenges</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#who-i-am">Who I Am</a></li>
+      <li><a href="#future">Future</a></li>
+      <li><a href="#reflection">Reflection</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- ══════════════════════════════════════════════════════════════════
+       SECTION 1 — HOME  ·  Pink #FADADD  ·  Asymmetric Grid
+  ══════════════════════════════════════════════════════════════════ -->
+  <section class="section home-section" id="home">
+    <div class="home-section__grid">
+
+      <!-- LEFT COLUMN — profile photo -->
+      <div class="home-section__photo-col">
+        <!-- ★ REPLACE ▸ Delete this div and paste your <img> tag.
+             Example: <img src="images/profile.jpg" alt="Devany Renatta"> -->
+        <div class="photo-box photo-box--profile">
+          <img src="./imagenes/Main.jpeg" alt="Devany">
+          <span class="photo-box__label"></span>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN — text content -->
+      <div class="home-section__text-col">
+        <p class="home-section__role">Business Management Engineer</p>
+        <h1 class="home-section__name">Devany Renatta<br>Hernández<br>Bustamante</h1>
+        <blockquote class="home-section__quote">
+          "I am the sum of my scars and the strength of my smiles,
+          which teaches me to be my own safe place."
+        </blockquote>
+        <p class="home-section__intro">
+          Welcome to my life. I am a passionate person who finds joy in the journey
+          of learning and self-improvement. Every day, I strive to achieve my personal
+          goals because I believe that consistency shapes our future. Furthermore,
+          I value the quiet moments of reflection just as much as hard work, as both
+          contribute to who I am today.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════════════════
+       SECTION 2 — EARLY LIFE  ·  Cream #FDF6EC  ·  Flex text + Grid photos
+  ══════════════════════════════════════════════════════════════════ -->
+  <section class="section early-life-section" id="early-life">
+    <div class="early-life-section__inner">
+
+      <p class="chapter-tag">Chapter 01</p>
+      <h2 class="section-heading section-heading--wine">
+        My Story, my Roots,<br>and my Passions
+      </h2>
+
+      <p class="body-text">
+        I was born in a small city called Cananea, Sonora, where I really enjoyed living
+        because of its tranquility, closeness, and the welcoming people who formed it.
+        My name is Devany Renatta Hernández Bustamante, born on August 21, 2008.
+        I grew up in a hardworking family that always strove for the best and supported
+        me to be my best version. My parents were my biggest role models and my adoration;
+        while I was growing up, they were constantly instilling in me the values and
+        attitudes that formed me as a person. I was very proud to be their daughter and
+        to reflect what they taught me.
+      </p>
+
+      <!-- ─ FATHER ─────────────────────────────────────────── -->
+      <hr class="section-rule" />
+      <h3 class="sub-heading">My father's example</h3>
+      <p class="body-text">
+        My father, Heraclio Hernández Jaramillo, is a very serious and quiet person,
+        but I love watching him smile and have fun. While I was growing up, I loved
+        watching him play basketball. It was something he was excellent at since he was
+        young; he practiced it constantly, and he still loves it today. From him, I
+        inspired myself to practice this sport. One of many memories I had with my father
+        was when he was teaching me how to play basketball on our house's court. From my
+        father, I admired and learned to be resilient, patient, independent, and to have
+        the ability to manage stress and form my own opinion.
+      </p>
+
+      <!-- ★ REPLACE ▸ Father 4-photo grid
+           Remove each photo-box div and replace with your <img> tag.
+           Example: <img src="images/dad-1.jpg" alt="Father photo 1"> -->
+      <div class="photo-grid-4" aria-label="Father photo grid">
+        <div class="photo-box photo-box--grid4">
+         <img src="./imagenes/F1.jpeg" alt="Father">
+         <span class="photo-box__label"></span></div>
+        <div class="photo-box photo-box--grid4">
+          <img src="./imagenes/F2.jpeg" alt="Father">
+          <span class="photo-box__label"></span></div>
+        <div class="photo-box photo-box--grid4">
+          <img src="./imagenes/F3.jpeg" alt="Father">
+          <span class="photo-box__label"></span></div>
+        <div class="photo-box photo-box--grid4">
+          <img src="./imagenes/F4.jpeg" alt="Father">
+          <span class="photo-box__label"></span></div>
+      </div>
+
+      <!-- ─ MOTHER ─────────────────────────────────────────── -->
+      <hr class="section-rule" />
+      <h3 class="sub-heading">My mother's love and the team they formed</h3>
+      <p class="body-text">
+        My mother, Noelia Bustamante Villa, was a highly smiling, fun, and quiet person.
+        Since I was little, she looked for the best for me and showed it to me in a
+        thousand ways. I adored our trust and loved when she told me her stories from
+        when she was young. One of the memories I had with her since I was a child was
+        when we were lying down to watch movies and soap operas together. From my mother,
+        I admired and learned to be understanding, empathetic, loving, to have fun, to
+        try, to know when to set boundaries, and to be confident in myself.
+      </p>
+
+      <!-- ★ REPLACE ▸ Mother 4-photo grid -->
+      <div class="photo-grid-4" aria-label="Mother photo grid">
+        <div class="photo-box photo-box--grid4">
+          <img src="./imagenes/M1.jpeg" alt="Mother">
+          <span class="photo-box__label"></span></div>
+        <div class="photo-box photo-box--grid4">
+          <img src="./imagenes/M2.jpeg" alt="Mother">
+          <span class="photo-box__label"></span></div>
+        <div class="photo-box photo-box--grid4">
+          <img src="./imagenes/M3.jpeg" alt="Mother">
+          <span class="photo-box__label"></span></div>
+        <div class="photo-box photo-box--grid4">
+          <img src="./imagenes/M4.jpeg" alt="Mother">
+          <span class="photo-box__label"></span></div>
+      </div>
+
+      <p class="body-text">
+        My parents complemented each other, meaning they learned from one another,
+        which made them great people; this gave them the strength to take on the challenge
+        of raising two lives: my brother's and mine. I knew it was not easy at all, because
+        as we were growing up, we made mistakes. Nevertheless, if it weren't for them, we
+        wouldn't know how to identify good from bad. I deeply appreciated that they always
+        wanted the best for us; they protected us, supported us, and advised us in every
+        single one of our decisions. I also appreciated the freedom they gave us and the
+        trust they made us feel. I highly admired and respected every member of my family.
+      </p>
+
+      <!-- ─ DANCE ─────────────────────────────────────────── -->
+      <hr class="section-rule" />
+      <h3 class="sub-heading">My passion for dance</h3>
+      <p class="body-text">
+        My favorite stories and memories were always dancing. Since I was 3 years old,
+        I had the opportunity to be part of a dance group at the Casa de la Cultura.
+        Later, I was part of what is now Allegro Estudio de Danza, where I lived the
+        best experiences and choreographies. I admired all the teachers who formed this
+        team, as they were excellent professionals and I learned so much from them.
+        Dancing was always my favorite hobby, which I always enjoyed while I recognized
+        my achievements.
+      </p>
+
+      <!-- ★ REPLACE ▸ Dance 4-photo grid -->
+      <div class="photo-grid-4" aria-label="Dance photo grid">
+        <div class="photo-box photo-box--grid4">
+          <img src="./imagenes/d1.jpeg" alt="Dance">
+          <span class="photo-box__label"></span></div>
+        <div class="photo-box photo-box--grid4">
+          <img src="./imagenes/d2.jpeg" alt="Dance">
+          <span class="photo-box__label"></span></div>
+        <div class="photo-box photo-box--grid4">
+          <img src="./imagenes/d3.jpeg" alt="Dance">
+          <span class="photo-box__label"></span></div>
+        <div class="photo-box photo-box--grid4">
+          <img src="./imagenes/d4.jpeg" alt="Dance">
+          <span class="photo-box__label"></span></div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════════════════
+       SECTION 3 — CHALLENGES & LESSONS  ·  Wine #58111A  ·  Grid + sticky photo
+  ══════════════════════════════════════════════════════════════════ -->
+  <section class="section challenges-section" id="challenges">
+    <div class="challenges-section__inner">
+
+      <p class="chapter-tag chapter-tag--light">Chapter 02</p>
+      <h2 class="section-heading section-heading--light">Challenges &amp; Lessons</h2>
+
+      <div class="challenges-section__layout">
+
+        <!-- THREE CHALLENGE BOXES (staggered flex column) -->
+        <div class="challenges-section__boxes">
+
+          <div class="challenge-card">
+            <span class="challenge-card__number">01</span>
+            <h3 class="challenge-card__title">Friendships</h3>
+            <p class="challenge-card__text">
+              I vividly remember the time I was about to enter middle school. Before that
+              moment, I had never faced such intense social anxiety, but I pushed myself to
+              be friendly and ended up meeting wonderful people with whom I had so much fun.
+              However, when I transitioned to high school, I changed schools. I got to know
+              new classmates, but I still held onto my middle school friends. Prior to that
+              change, I had assumed they would be in my life forever. Unfortunately, people
+              change, and nothing lasts forever. By the time I noticed the shift, some of
+              those friendships had already become toxic and caused me a great deal of pain.
+              Looking back, if I hadn't changed schools, I would never have realized how
+              quickly people can change. All of those situations made me feel deeply sad,
+              and I went through an incredibly difficult period. Now, I have returned to
+              Instituto Sonora, where I attended middle school. At this very moment, I do
+              not regret returning at all, because it allowed me to finally distance myself
+              from those friends who made me struggle so much.
+            </p>
+          </div>
+
+          <div class="challenge-card">
+            <span class="challenge-card__number">02</span>
+            <h3 class="challenge-card__title">Self-Acceptance</h3>
+            <p class="challenge-card__text">
+              Other small obstacles along the way involved learning to accept myself. It
+              was not easy at first because I was constantly looking for external validation,
+              and sometimes I even lied just to avoid being judged. However, through these
+              hardships, I learned to respect myself. By establishing healthy boundaries and
+              understanding that my mental well-being must be my top priority, today I accept
+              myself with both my virtues and my shadows, while always seeking to improve.
+              I finally understood that self-respect is the foundation of any healthy
+              relationship.
+            </p>
+          </div>
+
+          <div class="challenge-card">
+            <span class="challenge-card__number">03</span>
+            <h3 class="challenge-card__title">Adaptability</h3>
+            <p class="challenge-card__text">
+              Adapting to new environments is not always easy; personally, it used to be very
+              difficult for me because I preferred staying comfortable. However, during this
+              past year, I made a conscious decision to accept and try new challenges.
+              Stepping out of my comfort zone has allowed me to grow and adapt to any
+              adversity or situation that comes my way.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- B&W INTROSPECTIVE PHOTO (sticky aside) -->
+        <aside class="challenges-section__photo-aside">
+          <!-- ★ REPLACE ▸ Remove div, paste your <img> with style="filter:grayscale(100%)"
+               Example: <img src="images/introspective.jpg" alt="Introspective moment" style="filter:grayscale(100%)"> -->
+          <div class="photo-box photo-box--bw">
+            <img src="./imagenes/Lesson.jpeg" alt="Challenges">
+            <span class="photo-box__label photo-box__label--light">B&amp;W Introspective Photo</span>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════════════════
+       SECTION 4 — ACHIEVEMENTS  ·  Pink #FADADD  ·  2×2 CSS Grid
+       CRITICAL: photo box ON TOP of each card's text block
+  ══════════════════════════════════════════════════════════════════ -->
+  <section class="section achievements-section" id="achievements">
+    <div class="achievements-section__inner">
+
+      <p class="chapter-tag">Chapter 03</p>
+      <h2 class="section-heading section-heading--wine">Achievements</h2>
+
+      <div class="achievements-section__grid">
+
+        <!-- CARD 1 — Dance -->
+        <article class="achievement-card">
+          <!-- ★ REPLACE ▸ Remove div, paste: <img src="images/dance-award.jpg" alt="TDR Dance Award"> -->
+          <div class="photo-box achievement-card__photo">
+            <img src="./imagenes/A1.jpeg" alt="Achievements">
+            <span class="photo-box__label"></span>
+          </div>
+          <div class="achievement-card__body">
+            <span class="achievement-card__marker">✦</span>
+            <h3 class="achievement-card__title">Dance</h3>
+            <p class="achievement-card__text">
+              I have won the Top Solo High Score and a gold medal at TDR, one of Mexico's
+              premier dance competitions, with my very first solo routine.
+            </p>
+          </div>
+        </article>
+
+        <!-- CARD 2 — Academic -->
+        <article class="achievement-card">
+          <!-- ★ REPLACE ▸ Remove div, paste your academic photo <img> -->
+          <div class="photo-box achievement-card__photo">
+            <img src="./imagenes/A2.jpeg" alt="Achievements">
+            <span class="photo-box__label"></span>
+          </div>
+          <div class="achievement-card__body">
+            <span class="achievement-card__marker">✦</span>
+            <h3 class="achievement-card__title">Academic Excellence</h3>
+            <p class="achievement-card__text">
+              I have been striving for academic excellence throughout my school years,
+              constantly achieving top marks.
+            </p>
+          </div>
+        </article>
+
+        <!-- CARD 3 — Athleticism -->
+        <article class="achievement-card">
+          <!-- ★ REPLACE ▸ Remove div, paste your athletics photo <img> -->
+          <div class="photo-box achievement-card__photo">
+            <img src="./imagenes/A4.jpeg" alt="Achievements">
+            <span class="photo-box__label"></span>
+          </div>
+          <div class="achievement-card__body">
+            <span class="achievement-card__marker">✦</span>
+            <h3 class="achievement-card__title">Athleticism</h3>
+            <p class="achievement-card__text">
+              I have won first place in the 300-meter athleticism competition
+              in Agua Prieta, Sonora.
+            </p>
+          </div>
+        </article>
+
+        <!-- CARD 4 — Basketball -->
+        <article class="achievement-card">
+          <!-- ★ REPLACE ▸ Remove div, paste your basketball photo <img> -->
+          <div class="photo-box achievement-card__photo">
+            <img src="./imagenes/A3.jpeg" alt="Achievements">
+            <span class="photo-box__label"></span>
+          </div>
+          <div class="achievement-card__body">
+            <span class="achievement-card__marker">✦</span>
+            <h3 class="achievement-card__title">Basketball Team</h3>
+            <p class="achievement-card__text">
+              Being selected for the basketball team has enhanced my ability to
+              collaborate and communicate with others.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════════════════
+       SECTION 5 — WHO I AM TODAY  ·  Pink #FADADD  ·  Asymmetric Mosaic Grid
+  ══════════════════════════════════════════════════════════════════ -->
+  <section class="section who-i-am-section" id="who-i-am">
+    <div class="who-i-am-section__inner">
+
+      <p class="chapter-tag">Chapter 04</p>
+      <h2 class="section-heading section-heading--wine">Who I Am Today</h2>
+
+      <p class="who-i-am-section__intro body-text">
+        I am a woman who has learned to see life in a completely different way. I am someone
+        who is now more positive, chooses not to be consumed by stress, and enjoys doing the
+        things that I love. I have learned to give myself time, which allows me to pursue my
+        personal well-being, to work efficiently, and to do the best that I can. Today, I am
+        a creative and curious person who always gives herself the opportunity to try new
+        things and experiment.
+      </p>
+
+      <div class="who-i-am-section__mosaic">
+
+        <!-- BOX A — Personality -->
+        <div class="who-box who-box--personality">
+          <h3 class="who-box__title">My Personality</h3>
+          <p class="who-box__text">
+            <strong>Resilient and Strong-minded:</strong> I am someone who transforms past
+            pain into inner strength, which allows me to face life with a positive attitude.
+          </p>
+          <p class="who-box__text">
+            <strong>Curious and Self-aware:</strong> I am a reflective person whose curiosity
+            drives me to understand myself better and grow from my experiences.
+          </p>
+        </div>
+
+        <!-- BOX B — Values -->
+        <div class="who-box who-box--values">
+          <h3 class="who-box__title">My Values</h3>
+          <p class="who-box__text">
+            <strong>Self-Respect and Boundaries:</strong> I deeply value my mental well-being,
+            which has become my top priority after learning to overcome the need for external
+            validation.
+          </p>
+          <p class="who-box__text">
+            <strong>Respect and Gratitude:</strong> I am a respectful individual who highly
+            values the support system provided by the people that love and protect me.
+          </p>
+        </div>
+
+        <!-- BOX C — Strengths (full-width row) -->
+        <div class="who-box who-box--strengths">
+          <h3 class="who-box__title">My Strengths</h3>
+          <div class="who-box__strengths-grid">
+            <p class="who-box__text">
+              <strong>Resilience:</strong> I possess a remarkable resilience that helps me
+              turn emotional scars into reasons to smile.
+            </p>
+            <p class="who-box__text">
+              <strong>Perseverance and Hard Work:</strong> I am a hardworking and constant
+              student of life who does not fear failure, because I look at mistakes as lessons
+              which help me improve.
+            </p>
+            <p class="who-box__text">
+              <strong>Emotional Independence:</strong> I am my own safe place, proving that
+              I no longer depend on others to feel secure.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- FULL-WIDTH LIFESTYLE PHOTO — closes the section -->
+      <!-- ★ REPLACE ▸ Remove div, paste: <img src="images/lifestyle.jpg" alt="Current lifestyle"> -->
+      <div class="photo-box who-i-am-section__lifestyle-photo">
+        <img src="./imagenes/Today.jpeg" alt="Hoy">
+        <span class="photo-box__label"></span>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════════════════
+       SECTION 6 — FUTURE VISION  ·  Pink #FADADD  ·  Two-Column Grid
+       Right side: 2×2 photo grid
+  ══════════════════════════════════════════════════════════════════ -->
+  <section class="section future-section" id="future">
+    <div class="future-section__inner">
+
+      <p class="chapter-tag">Chapter 05</p>
+
+      <div class="future-section__columns">
+
+        <!-- TEXT BLOCK -->
+        <div class="future-section__text-block">
+          <h2 class="section-heading section-heading--wine">My Future Vision</h2>
+          <p class="body-text">
+            Before, this question overwhelmed me a lot, and it still does, but I will do
+            my best to achieve what I want. What I am sure of is that I am going to study
+            a university degree in Cananea, specifically Business Management Engineering,
+            where I hope to expand my knowledge and work the best I can. As for my goals
+            and dreams, I want to experience everything in life; I want to try everything.
+            Perhaps life is too short to achieve it all, but I hope and will try to feel
+            satisfied with whatever I accomplish. If I make mistakes, I hope I will get
+            back up and will continue dreaming. Next year, I will be pursuing my passions,
+            and I will be working hard to build my own future.
+          </p>
+        </div>
+
+        <!-- 2×2 PHOTO GRID -->
+        <!-- ★ REPLACE ▸ Remove each photo-box div, paste your <img> tags -->
+        <div class="future-section__photo-grid">
+          <div class="photo-box future-section__photo-item">
+            <img src="./imagenes/V1.jpeg" alt="Future">
+            <span class="photo-box__label"></span>
+          </div>
+          <div class="photo-box future-section__photo-item">
+            <img src="./imagenes/V2.jpeg" alt="Future">
+            <span class="photo-box__label"></span>
+          </div>
+          <div class="photo-box future-section__photo-item">
+            <img src="./imagenes/V3.jpeg" alt="Future">
+            <span class="photo-box__label"></span>
+          </div>
+          <div class="photo-box future-section__photo-item">
+            <img src="./imagenes/V4.jpeg" alt="Future">
+            <span class="photo-box__label"></span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════════════════
+       SECTION 7 — REFLECTION  ·  Wine #58111A  ·  Centered Typography
+  ══════════════════════════════════════════════════════════════════ -->
+  <section class="section reflection-section" id="reflection">
+    <div class="reflection-section__inner">
+      <p class="chapter-tag chapter-tag--light">Chapter 06</p>
+      <h2 class="reflection-section__heading">What Life<br>Has Taught Me</h2>
+      <div class="reflection-section__rule"></div>
+      <p class="reflection-section__body">
+        "Today I recognize myself as someone who has stopped chasing perfection to embrace
+        their authenticity. Looking back, I realize I could have made different choices
+        during moments of doubt, and I might have given up when things became overwhelming.
+        However, I see that today I am much stronger than I thought. I should have trusted
+        myself much earlier, but every obstacle taught me to set boundaries and protect my
+        peace of mind. Moving forward, my goal is clear: I want to be a professional, while
+        maintaining a curiosity for learning and the courage to face new challenges without
+        losing my essence."
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════════════════
+       SECTION 8 — GALLERY  ·  Cream #FDF6EC  ·  Symmetric 3×3 CSS Grid
+  ══════════════════════════════════════════════════════════════════ -->
+  <section class="section gallery-section" id="gallery">
+    <div class="gallery-section__inner">
+
+      <p class="chapter-tag">Gallery</p>
+      <h2 class="section-heading section-heading--wine">A Life in Frames</h2>
+
+      <!-- ★ REPLACE ▸ Remove each photo-box div and paste your <img> tags.
+           Example: <img src="images/gallery-1.jpg" alt="Gallery photo 1"> -->
+      <div class="gallery-section__grid">
+        <div class="photo-box gallery-section__item">
+          <img src="./imagenes/G1.jpeg" alt="Gallery">
+          <span class="photo-box__label"></span></div>
+        <div class="photo-box gallery-section__item">
+          <img src="./imagenes/G2.jpeg" alt="Gallery">
+          <span class="photo-box__label"></span></div>
+        <div class="photo-box gallery-section__item">
+          <img src="./imagenes/G3.jpeg" alt="Gallery">
+          <span class="photo-box__label"></span></div>
+        <div class="photo-box gallery-section__item">
+          <img src="./imagenes/G4.jpeg" alt="Gallery">
+          <span class="photo-box__label"></span></div>
+        <div class="photo-box gallery-section__item">
+          <img src="./imagenes/G5.jpeg" alt="Gallery">
+          <span class="photo-box__label"></span></div>
+        <div class="photo-box gallery-section__item">
+          <img src="./imagenes/G6.jpeg" alt="Gallery">
+          <span class="photo-box__label"></span></div>
+        <div class="photo-box gallery-section__item">
+          <img src="./imagenes/G7.jpeg" alt="Gallery">
+          <span class="photo-box__label"></span></div>
+        <div class="photo-box gallery-section__item">
+          <img src="./imagenes/G8.jpeg" alt="Gallery">
+          <span class="photo-box__label"></span></div>
+        <div class="photo-box gallery-section__item">
+          <img src="./imagenes/G9.jpeg" alt="Gallery">
+          <span class="photo-box__label"></span></div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════════════════
+       FOOTER  ·  Flexbox  ·  Favicon placeholder + centered name
+  ══════════════════════════════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+
+      <!-- ★ REPLACE ▸ Favicon / small icon placeholder
+           Remove this div and paste: <img src="images/favicon.png" alt="Site icon" class="site-footer__favicon"> -->
+      <div class="site-footer__favicon-placeholder">
+        <img src="./favicon-32x32.png" alt="Fav">
+        <span class="photo-box__label photo-box__label--light"></span>
+      </div>
+
+      <div class="site-footer__text">
+        <p class="site-footer__name">Devany Renatta Hernández Bustamante</p>
+        <p class="site-footer__copy">&copy; 2024 — All rights reserved</p>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ── MOBILE NAV TOGGLE (zero animation, instant show/hide) ── -->
+  <script>
+    document.querySelector('.navbar__toggle').addEventListener('click', function () {
+      document.getElementById('navLinks').classList.toggle('navbar__links--open');
+    });
+  </script>
+
+</body>
+</html>
